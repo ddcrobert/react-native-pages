@@ -57,6 +57,8 @@ export default class Pages extends PureComponent {
     onScrollBegin: PropTypes.func,
     onScrollEnd: PropTypes.func,
     renderPager: PropTypes.func,
+
+    scrollToPage: PropTypes.func,
   };
 
   constructor(props) {
@@ -69,6 +71,8 @@ export default class Pages extends PureComponent {
 
     this.updateRef = this.updateRef.bind(this, 'scroll');
     this.renderPage = this.renderPage.bind(this);
+
+    this.scrollToPage = this.scrollToPage.bind(this);
 
     let { startPage, progress = new Animated.Value(startPage) } = this.props;
 
